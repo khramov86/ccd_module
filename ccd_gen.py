@@ -33,6 +33,7 @@ for ip in all_ips:
         curr_ip = ip
         break
 if 'curr_ip' in globals(): 
-    print(f"User created with ip {curr_ip}")
+    print(f"User created with ip {curr_ip} route is {curr_ip+1}")
+    print(f"ifconfig-push {curr_ip} {curr_ip+1}")
 else:
     raise ValueError("All addresess are used")
