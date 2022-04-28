@@ -23,7 +23,6 @@ def check_user_file(username):
     _, stdout, _ = client.exec_command('cat {}/{}'.format(ccd_path, username))
     if stdout.channel.recv_exit_status() == 1:
         return False
-    print(stdout.read().decode())
     return True
 
 def add_user(username):
@@ -50,7 +49,6 @@ def add_user(username):
     _, _, _ = client.exec_command(f'echo "ifconfig-push {curr_ip} {curr_ip+1}" > {ccd_path}/{username}')
     if 'curr_ip' in locals(): 
         print(f"User created with ip {curr_ip} route is {curr_ip+1}")
-        print(f"ifconfig-push {curr_ip} {curr_ip+1}")
     else:
         raise ValueError("All addresess are used")
 
