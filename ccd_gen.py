@@ -3,8 +3,7 @@ import os
 from dotenv import load_dotenv
 from netaddr import *
 import yaml
-load_dotenv()
-# network = IPNetwork('')
+
 
 ccd_path = os.getenv('CCD_PATH')
 hostname = os.getenv('SSH_HOST')
